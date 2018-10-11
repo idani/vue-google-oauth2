@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wat4dog/vue-google-oauth2.git"
+    "url": "git+https://github.com/idani/vue-google-oauth2.git"
   },
   "keywords": [
     "vue",
@@ -24,7 +24,7 @@
   "author": "Anton B.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wat4dog/vue-google-oauth2/issues"
+    "url": "https://github.com/idani/vue-google-oauth2/issues"
   },
-  "homepage": "https://github.com/wat4dog/vue-google-oauth2#readme"
+  "homepage": "https://github.com/idani/vue-google-oauth2#readme"
 }
