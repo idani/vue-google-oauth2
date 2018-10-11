@@ -1,6 +1,7 @@
 var googleAuth = (function () {
     
   var GoogleAuthInstance
+  var gaCallBackName = '__googleApiOnLoadCallback'
 
   function load (config) {
     installClient().then(function () {
@@ -35,18 +36,14 @@ var googleAuth = (function () {
   }
 
   function installClient () {
-    var apiUrl = 'https://apis.google.com/js/api.js'
+    var apiUrl = 'https://apis.google.com/js/platform.js?onload=' + gaCallBackName
     return new Promise(function (resolve, reject) {
       var script = document.createElement('script')
       script.src = apiUrl
-      script.onreadystatechange = script.onload = function () {
-        if (!script.readyState || /loaded|compvare/.test(script.readyState)) {
-          setTimeout(function () {
-            resolve()
-          }, 500)
-        }
-      }
-      document.getElementsByTagName('head')[0].appendChild(script)
+      window[gaCallBackName] = (function () {
+        resolve()
+      })
+      document.body.appendChild(script)
     })
   }
   
